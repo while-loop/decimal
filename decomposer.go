@@ -40,7 +40,7 @@ type decomposer interface {
 // Decompose returns the internal decimal state into parts.
 // If the provided buf has sufficient capacity, buf may be returned as the coefficient with
 // the value set and length set as appropriate.
-func (z *Big) Decompose(buf []byte) (form byte, negative bool, coefficient []byte, exponent int32) {
+func (z Big) Decompose(buf []byte) (form byte, negative bool, coefficient []byte, exponent int32) {
 	negative = z.Sign() < 0
 	switch {
 	case z.IsInf(0):
